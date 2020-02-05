@@ -13,7 +13,6 @@ before_install:
   - gcloud auth activate-service-account --key-file service-account.json
   - gcloud config set project multi-kbnts
   - gcloud config set compute/zone australia-southeast1-c
-
   - gcloud container clusters get-credentials multi-cluster
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" -- password-stdin
   - docker build -t isaactomlinson/react -f ./client/Dockerfile.dev ./client
